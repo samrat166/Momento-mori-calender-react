@@ -1,4 +1,3 @@
-import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import MomentoMoriCalender from "./components/MomentoMori";
 
@@ -9,7 +8,7 @@ function App() {
       dateOfBirth="1999-10-10"
       events={[
         {
-          startingDate: "2012-12-12",
+          startingDate: "2000-12-12",
           endDate: "2019-12-12",
           color: "red",
           description: "adsdasd",
@@ -27,7 +26,6 @@ function App() {
           description: "adsdasd",
         },
       ]}
-      yearLabel={[10, 20, 30]}
     />
   );
 }

@@ -66,21 +66,19 @@ function MomentoMoriCalender({
   yearLabel = [],
   dateOfBirth = "",
   events = [],
-  showDateInput = true,
   showStartingOfYear = true,
   defaultColor = "pink",
 }) {
-  const [dob, setDob] = useState(dateOfBirth);
   const [week, setWeek] = useState(weeksInLife({ dateOfBirth, events }));
   const yearsToShowOnRightSide = yearLabelCalculator(yearLabel);
 
   useEffect(() => {
-    setWeek(weeksInLife({ dateOfBirth: dob, events, defaultColor }));
-  }, [dob, events]);
-  console.log("first");
+    console.log(dateOfBirth, "asdasdasd");
+    setWeek(weeksInLife({ dateOfBirth, events, defaultColor }));
+  }, [dateOfBirth, events]);
   return (
     <>
-      <div>
+      <div className="container">
         <div
           style={{
             display: "flex",
@@ -90,20 +88,6 @@ function MomentoMoriCalender({
             marginLeft: showStartingOfYear && "50px",
           }}
         >
-          {showDateInput && (
-            <div style={{ marginLeft: "3%" }}>
-              <>
-                <span style={{ fontWeight: "600" }}>Date of Birth : </span>
-                <input
-                  type="date"
-                  value={dob}
-                  onChange={(e) => setDob(e.target.value)}
-                  style={{ borderRadius: "5px", padding: 0 }}
-                />
-              </>
-            </div>
-          )}
-
           <div className="calender">
             {week.map((item, index) => {
               let sixMonth = index % 26 === 0;
@@ -133,22 +117,23 @@ function MomentoMoriCalender({
                         </i>
                       </h6>
                     )}
-                    {yearsToShowOnRightSide.map((year) => {
-                      if (year.index === index)
-                        return (
-                          <h6
-                            key={year.label}
-                            style={{
-                              fontSize: "10px",
-                              marginLeft: "14px",
-                              fontWeight: "600",
-                              marginTop: "-2px",
-                            }}
-                          >
-                            {year.label}
-                          </h6>
-                        );
-                    })}
+                    {yearsToShowOnRightSide.length !== 0 &&
+                      yearsToShowOnRightSide.map((year) => {
+                        if (year.index === index)
+                          return (
+                            <h6
+                              key={year.label}
+                              style={{
+                                fontSize: "10px",
+                                marginLeft: "14px",
+                                fontWeight: "600",
+                                marginTop: "-2px",
+                              }}
+                            >
+                              {year.label}
+                            </h6>
+                          );
+                      })}
                   </div>
                 </>
               );
