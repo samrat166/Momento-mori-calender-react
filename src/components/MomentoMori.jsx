@@ -77,63 +77,59 @@ function MomentoMoriCalender({
   }, [dateOfBirth, events]);
   return (
     <>
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <div
-          style={{
-            
-            marginTop: "10px",
-            marginLeft: showStartingOfYear && "70px",
-          }}
-        >
-          <div className="calender">
-            {week.map((item, index) => {
-              let rowSpace = (index + 1) % 520 === 0;
-              return (
-                <>
-                  <div
-                    key={item.date}
-                    title={item?.event?.description}
-                    className="week-cell"
-                    style={{
-                      marginBottom: rowSpace && "4px",
-                      backgroundColor: item.color,
-                    }}
-                  >
-                    {showStartingOfYear && index % 52 === 0 && (
-                      <h6
-                        style={{
-                          fontSize: "9px",
-                          marginLeft: "-58px",
-                        }}
-                      >
-                        <i>
-                          {item.date !== "Invalid Date" &&
-                            item.date.slice(4, 15)}
-                        </i>
-                      </h6>
-                    )}
-                    {yearsToShowOnRightSide.length !== 0 &&
-                      yearsToShowOnRightSide.map((year) => {
-                        if (year.index === index)
-                          return (
-                            <h6
-                              key={year.label}
-                              style={{
-                                fontSize: "10px",
-                                marginLeft: "14px",
-                                fontWeight: "600",
-                                marginTop: "-2px",
-                              }}
-                            >
-                              {year.label}
-                            </h6>
-                          );
-                      })}
-                  </div>
-                </>
-              );
-            })}
-          </div>
+      <div
+        style={{
+          marginTop: "10px",
+          marginLeft: showStartingOfYear && "60px",
+        }}
+      >
+        <div className="calender">
+          {week.map((item, index) => {
+            let rowSpace = (index + 1) % 520 === 0;
+            return (
+              <>
+                <div
+                  key={item.date}
+                  title={item?.event?.description}
+                  className="week-cell"
+                  style={{
+                    marginBottom: rowSpace && "4px",
+                    backgroundColor: item.color,
+                  }}
+                >
+                  {showStartingOfYear && index % 52 === 0 && (
+                    <h6
+                      style={{
+                        fontSize: "9px",
+                        marginLeft: "-58px",
+                      }}
+                    >
+                      <i>
+                        {item.date !== "Invalid Date" && item.date.slice(4, 15)}
+                      </i>
+                    </h6>
+                  )}
+                  {yearsToShowOnRightSide.length !== 0 &&
+                    yearsToShowOnRightSide.map((year) => {
+                      if (year.index === index)
+                        return (
+                          <h6
+                            key={year.label}
+                            style={{
+                              fontSize: "10px",
+                              marginLeft: "14px",
+                              fontWeight: "600",
+                              marginTop: "-2px",
+                            }}
+                          >
+                            {year.label}
+                          </h6>
+                        );
+                    })}
+                </div>
+              </>
+            );
+          })}
         </div>
       </div>
     </>
