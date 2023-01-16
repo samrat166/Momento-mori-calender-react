@@ -78,19 +78,15 @@ function MomentoMoriCalender({
   }, [dateOfBirth, events]);
   return (
     <>
-      <div className="container">
+      <div className="">
         <div
           style={{
-            display: "flex",
-            justifyContent: "center",
-            flexDirection: "column",
             marginTop: "10px",
-            marginLeft: showStartingOfYear && "50px",
+            marginLeft: showStartingOfYear && "70px",
           }}
         >
           <div className="calender">
             {week.map((item, index) => {
-              let sixMonth = index % 26 === 0;
               let rowSpace = (index + 1) % 520 === 0;
               return (
                 <>
@@ -100,7 +96,6 @@ function MomentoMoriCalender({
                     className="week-cell"
                     style={{
                       marginBottom: rowSpace && "4px",
-                      marginLeft: sixMonth && "3px",
                       backgroundColor: item.color,
                     }}
                   >
