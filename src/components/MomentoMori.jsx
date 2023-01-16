@@ -73,14 +73,14 @@ function MomentoMoriCalender({
   const yearsToShowOnRightSide = yearLabelCalculator(yearLabel);
 
   useEffect(() => {
-    console.log(dateOfBirth, "asdasdasd");
     setWeek(weeksInLife({ dateOfBirth, events, defaultColor }));
   }, [dateOfBirth, events]);
   return (
     <>
-      <div className="">
+      <div style={{ display: "flex", justifyContent: "center" }}>
         <div
           style={{
+            
             marginTop: "10px",
             marginLeft: showStartingOfYear && "70px",
           }}
