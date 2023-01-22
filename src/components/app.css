@@ -1,12 +1,42 @@
 .calender {
   display: grid;
   grid-gap: 2px;
-  grid-template-columns: repeat(52, 1vw);
+  grid-template-columns: repeat(52, auto);
 }
 
 .week-cell {
   border: 1px solid rgb(150, 150, 150);
-  height: 1vw;
-  width: 1vw;
+  height: auto;
+  width: auto;
   border-radius: 1px;
+}
+@media only screen and (max-width: 700px) {
+  .calender {
+  display: grid;
+  grid-gap: 2px;
+  grid-template-columns: repeat(52, auto);
+}
+
+.week-cell {
+  border: 1px solid rgb(150, 150, 150);
+  height: 10px;
+  width: auto;
+  border-radius: 1px;
+}
+}
+
+
+@media only screen and (max-width: 900) {
+  .calender {
+  display: grid;
+  grid-gap: 2px;
+  grid-template-columns: repeat(52, auto);
+}
+
+.week-cell {
+  border: 1px solid rgb(150, 150, 150);
+  height: 8px;
+  width: auto;
+  border-radius: 1px;
+}
 }

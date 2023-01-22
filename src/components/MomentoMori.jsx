@@ -80,10 +80,14 @@ function MomentoMoriCalender({
       <div
         style={{
           marginTop: "10px",
+          backgroundColor: "pink",
           marginLeft: showStartingOfYear && "60px",
         }}
       >
-        <div className="calender">
+        <div
+          className="calender"
+          style={{ width: "100%", border: "2px solid red" }}
+        >
           {week.map((item, index) => {
             let rowSpace = (index + 1) % 520 === 0;
             return (

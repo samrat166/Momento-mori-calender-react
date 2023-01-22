@@ -4,7 +4,7 @@ import MomentoMoriCalender from "./components/MomentoMori";
 function App() {
   return (
     <>
-      <div style={{ border: "1px solid black", margin: "10px" }}>
+      <div>
         <MomentoMoriCalender
           showStartingOfYear={true}
           dateOfBirth="1999-10-10"
